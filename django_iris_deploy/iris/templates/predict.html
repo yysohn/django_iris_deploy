@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<head>
+    <title>아이리스 예측 결과</title>
+</head>
+<body bgcolor=#9d3bc4>
+
+    <center>
+
+        <h1>  PREDICTION :  </h1>
+    
+    {%if predict == 0%}
+    <h1>Iris-setosa</h1>  
+    <img src="{% static 'images/setosa.jpg' %}">  
+
+    {%elif predict == 1%}
+    <h1>Iris-versicolor</h1>
+    <img src="{% static 'images/versi.jpg' %}">
+
+    {%elif predict == 2%}
+    <h1>Iris-versicolor</h1>
+    <img src="{% static 'images/virginica.png' %}">
+   
+    {%endif%}
+
+        <br><br>
+    <a href="{% url 'iris_home' %}">go back to home page</a>
+
+    </center>
+
+</body>
+
+</html>

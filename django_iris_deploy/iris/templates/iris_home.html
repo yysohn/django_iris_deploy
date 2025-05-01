@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title>아이리스 예측 입력</title>
+    </head>
+    <body bgcolor=#d4a3ae>
+        <center>
+
+        <h1> IRIS FLOWER DETECTION </h1><br>
+        <form method="POST", action="{% url 'predict' %}">
+            {% csrf_token %}
+           <b>  <label>First value : </label>
+                <input type="text", name='sepal_length', placeholder="sepal length (cm)" required> <br><br>
+                <label>Second value : </label>
+                <input type="text", name='sepal_width', placeholder="sepal width (cm)" required> <br><br>
+                <label>Third value :  </label>
+                <input type="text", name='petal_length', placeholder="petal length (cm)" required> <br><br>
+                <label>Fourth value : </label>
+                <input type="text", name='petal_width', placeholder="petal width (cm)" required> <br><br><br>
+            </b>
+            <input type="submit" , value='predict' >
+        </form>
+
+        <img src="{% static 'images/flower1.jpg' %}" alt="flower">
+        
+    </center>
+
+    </body>
+</html>
